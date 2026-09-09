@@ -32,6 +32,10 @@
   section { margin-top:26px; }
   .sec-title { display:flex; align-items:center; gap:8px; font-size:17px; font-weight:800; margin-bottom:12px; }
   .sec-title .bar { width:5px; height:18px; border-radius:3px; background:var(--accent); }
+  details.sec > summary.sec-title { list-style:none; cursor:pointer; user-select:none; }
+  details.sec > summary.sec-title::-webkit-details-marker { display:none; }
+  details.sec > summary .caret { margin-left:auto; color:var(--muted); font-size:13px; transition:transform .2s; }
+  details.sec[open] > summary .caret { transform:rotate(90deg); }
   .card { background:var(--card); border-radius:16px; padding:16px; box-shadow:var(--shadow); border:1px solid var(--line); }
 
   .now-card { background:linear-gradient(135deg,#1f2933,#2c3a47); color:#fff; border:none; border-radius:20px; padding:18px; box-shadow:0 6px 24px rgba(0,0,0,.15); }
@@ -39,6 +43,10 @@
   .member { display:flex; align-items:center; gap:12px; padding:9px 0; border-top:1px solid rgba(255,255,255,.1); }
   .member:first-of-type { border-top:none; }
   .m-avatar { flex:0 0 auto; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; background:rgba(255,255,255,.14); }
+  .m-avatars { flex:0 0 auto; display:flex; }
+  .m-avatars .m-avatar { width:34px; height:34px; font-size:16px; border:2px solid #2c3a47; }
+  .m-avatars .m-avatar + .m-avatar { margin-left:-10px; }
+  .m-note { font-size:11px; opacity:.6; margin-top:2px; }
   .m-info { flex:1; min-width:0; }
   .m-name { font-size:14px; font-weight:700; }
   .m-event { font-size:12.5px; opacity:.85; margin-top:1px; }
@@ -145,16 +153,19 @@
   </section>
 
   <section id="overview" data-page-node-id="Y7BFB3LJgD9WNUuDWA9QoF">
-    <div class="sec-title" data-page-node-id="tdHbIKAvUd1xUPPxfDjHrw"><span class="bar" data-page-node-id="6vuwSVITGmb6BLLebZtC0P"></span>行程总览 · 南岛自驾环线</div>
-    <div class="card map-wrap" data-page-node-id="ptTFdwxsURyUxVUEFeyAMs">
-      <svg id="map" viewBox="0 0 760 620" role="img" aria-label="新西兰南岛自驾路线图" data-page-node-id="nR7I5ODFI90KD7erVtkqPw"></svg>
-      <div class="map-legend" id="mapLegend" data-page-node-id="yVT2QuxXVjzDHVx3YcUJ8B"></div>
-    </div>
+    <details class="sec">
+      <summary class="sec-title" data-page-node-id="tdHbIKAvUd1xUPPxfDjHrw"><span class="bar" data-page-node-id="6vuwSVITGmb6BLLebZtC0P"></span>行程总览 · 南岛自驾环线<span class="caret">▸</span></summary>
+      <div class="card map-wrap" data-page-node-id="ptTFdwxsURyUxVUEFeyAMs">
+        <svg id="map" viewBox="0 0 760 620" role="img" aria-label="新西兰南岛自驾路线图" data-page-node-id="nR7I5ODFI90KD7erVtkqPw"></svg>
+        <div class="map-legend" id="mapLegend" data-page-node-id="yVT2QuxXVjzDHVx3YcUJ8B"></div>
+      </div>
+    </details>
   </section>
 
   <section id="confirmed" data-page-node-id="n0Z1J47Vi8G44030VBENGW">
-    <div class="sec-title" data-page-node-id="SIcYBfHa4wkChUypY3Hr4V"><span class="bar" data-page-node-id="I7azwEyCHv6HVP8RFIVB5M"></span>已确认 · 机票 / 租车 / 酒店</div>
-    <div class="confirm-grid" data-page-node-id="q5UI5CZdlO7ALaedsNDG3k">
+    <details class="sec">
+      <summary class="sec-title" data-page-node-id="SIcYBfHa4wkChUypY3Hr4V"><span class="bar" data-page-node-id="I7azwEyCHv6HVP8RFIVB5M"></span>已确认 · 机票 / 租车 / 酒店<span class="caret">▸</span></summary>
+      <div class="confirm-grid" data-page-node-id="q5UI5CZdlO7ALaedsNDG3k">
       <div class="card" data-page-node-id="ZA9HF11msAWOpMWhsrVDE1"><h4 style="font-size:15px;margin-bottom:10px;" data-page-node-id="F447QHdDJ5jqBrJdoaxmGY">✈️ 机票（已出票，按当地时间）</h4>
         <div class="confirm-item" data-page-node-id="HfgEqnPBSwgDpixRLAKSbq"><span class="tag" data-page-node-id="UP9pFDvuGhnJcVaMlS3SuI">9.24</span><h4 data-page-node-id="DRSSIIX1NgPFoHWtN1OCTH">天津 → 新加坡 → 墨尔本　酷航 TR139 / TR58</h4>
           <div class="row" data-page-node-id="kLYIyTGyMrCEWKmo3vaXYX">09:05 天津滨海 T1 → 15:10 新加坡；09.25 02:30 新加坡 → 11:45 墨尔本 T2</div>
@@ -191,8 +202,8 @@
           <div class="row" data-page-node-id="mFMXVsnMw9ybvjzpxQGK1C"><b data-page-node-id="hhAgkqfkFGFreOFE8rWJaN">地址：</b>412 Manuka Terrace, Ben Ohau　<b data-page-node-id="dT2vUHr9mjJg5Aq7nPtYne">电话：</b>+61 404 001 102</div></div>
         <div class="confirm-item" data-page-node-id="sggjNo3ntVMNMWDxfbSU0V"><span class="tag" data-page-node-id="56eGGZb3epv2VQDRnYAoUz">9.30–10.2</span><h4 data-page-node-id="uAaGsVzx0lmrtMAaBA52vt">特威泽尔 GH Cottage（2 晚）</h4>
           <div class="row" data-page-node-id="9q21VzE0aDK1vxd01pADGt"><b data-page-node-id="qHNCSKZbMWF7btPF1ZPZmm">地址：</b>46 Boundary Terrace, Twizel 7999</div></div>
-        <div class="confirm-item" data-page-node-id="FQIikHqmPfY7IOjWYZ6Jo0"><span class="tag" data-page-node-id="xSXMJlDBtLz6p5QsLiTon8">10.2–10.3</span><h4 data-page-node-id="FHH6fBMM9He6grgPAVuE12">瓦纳卡 Private flat</h4>
-          <div class="row" data-page-node-id="pKNHs7SOFeFORGHxk0YYLB"><b data-page-node-id="fQaX3PcgPeYxLBDWOd3gPA">地址：</b>11 Mountain View Drive, Wānaka 9382　<b data-page-node-id="jSNCCCf2Hn7eTb8zyXs7j1">电话：</b>+64 27 241 4884</div></div>
+        <div class="confirm-item" data-page-node-id="FQIikHqmPfY7IOjWYZ6Jo0"><span class="tag" data-page-node-id="xSXMJlDBtLz6p5QsLiTon8">10.2–10.3</span><h4 data-page-node-id="FHH6fBMM9He6grgPAVuE12">Haka House Wanaka</h4>
+          <div class="row" data-page-node-id="pKNHs7SOFeFORGHxk0YYLB"><b data-page-node-id="fQaX3PcgPeYxLBDWOd3gPA">地址：</b>94 Brownston Street, Wanaka 9305　<b data-page-node-id="jSNCCCf2Hn7eTb8zyXs7j1">房东：</b>Haka House Wanaka</div></div>
         <div class="confirm-item" data-page-node-id="5MjEL3LOuFXuahLgaNsm29"><span class="tag" data-page-node-id="LC8jaODaYWxqGGfXj9sjen">10.3–10.6</span><h4 data-page-node-id="DFmw0A4s8DcFtdGj0lxv8J">皇后镇 Central Location Holiday Home（3 晚）</h4>
           <div class="row" data-page-node-id="5ECBYadHS5tBK3JHOQZ5e2"><b data-page-node-id="quiLNLYL1hhT59BZDC16bL">地址：</b>18D Bowen Street D, Queenstown 9300　<b data-page-node-id="WSjsMvITCDQ0zCGSfKOAhy">电话：</b>+64 21 126 3900</div></div>
         <div class="confirm-item" data-page-node-id="Wk34GCOxQoJ0uI8olhvuoT"><span class="tag" data-page-node-id="BpqD4fKxgudF6iGTCNKUgT">10.6–10.7</span><h4 data-page-node-id="z2OeXtFodoQiB1QTIbn6PO">奥马鲁房源</h4>
@@ -203,6 +214,7 @@
           <div class="row" data-page-node-id="3lUwe3rNrbMadF9CDn57Zk">任金航、张思懿 10.8 返程后，余下两人奥克兰住宿尚未订</div></div>
       </div>
     </div>
+    </details>
   </section>
 
   <section id="days" data-page-node-id="t4yqaLIR9C4jNKi1iUPHz8">
@@ -225,7 +237,7 @@
       <div class="tip warn" data-page-node-id="i4aNqfvGVjJ7tdklJlUfUd"><h4 data-page-node-id="AacRcYAlinZy0SAsqcthTF">⚠️ 售罄 / 预约提醒</h4><p data-page-node-id="vmGONpDJIUkxaFAAbbGPzI">正值澳洲/新西兰春季 school holiday 与国内国庆：蒸汽小火车、皇后镇缆车、观星等热门项目务必尽早预订。</p></div>
       <div class="tip warn" data-page-node-id="s08s1KnkfXdgXcFHHHYpgG"><h4 data-page-node-id="CEMW93ZnytH5DMpf1jkDaw">⚠️ 住宿缺口</h4><p data-page-node-id="pCXXpPid2Ph6fcfE60HsrB">奥克兰 10.8–10.11（尹建成、李士航）3 晚住宿尚未预订，请尽快补订。</p></div>
       <div class="tip" data-page-node-id="WUiD2cUwqa5EbCEU5LH1tp"><h4 data-page-node-id="bgqwXjkeYtkxL3UKGpZA41">💳 通讯 / 支付</h4><p data-page-node-id="LajCEpVhAqIB4oMqzFfU2X">购澳新通用流量卡或开国际漫游；刷卡以 Visa/Master 为主，随身少量现金。</p></div>
-      <div class="tip" data-page-node-id="Nc43zOtFvTQVnCgx4Yi1Sk"><h4 data-page-node-id="fKlFK1SBnU8cnRkpJ3II6U">📋 证件</h4><p data-page-node-id="LIhCGE40XtFLoPUcVZRJZS">澳洲电子签 + 新西兰电子签；护照有效期 6 个月以上；新西兰自驾需 NZTA 认证的驾照翻译件。</p></div>
+      <div class="tip" data-page-node-id="Nc43zOtFvTQVnCgx4Yi1Sk"><h4 data-page-node-id="fKlFK1SBnU8cnRkpJ3II6U">📋 证件</h4><p data-page-node-id="LIhCGE40XtFLoPUcVZRJZS">✅ 澳洲电子签 + 新西兰电子签已办妥；护照有效期 6 个月以上；新西兰自驾需 NZTA 认证的驾照翻译件（待办）。</p></div>
       <div class="tip" data-page-node-id="2NQxGDgxuiMcWNdHxDGiAB"><h4 data-page-node-id="2gEL025IOxVTaja9fvUefB">🍳 备餐</h4><p data-page-node-id="YroufgyECPcr0nFAqIYJqJ">Ben Ohau 无餐馆超市，9.28 在基督城超市备足食材；库克山/观星点补给有限。</p></div>
     </div>
   </section>
@@ -279,8 +291,8 @@ function bindNav(){
   });
 }
 
-const MEMBERS = [
-  { name:"尹建成", emoji:"🧑‍💼", color:"#ff8a5c",
+const GROUPS = [
+  { name:"尹建成", color:"#ff8a5c", avatars:[{e:"👨"}],
     events:[
       {t:"2026-09-24T09:05:00+08:00", ev:"天津 → 新加坡", sub:"酷航 TR139 · 天津滨海 T1"},
       {t:"2026-09-25T02:30:00+08:00", ev:"新加坡 → 墨尔本", sub:"酷航 TR58 · 樟宜 T1"},
@@ -290,7 +302,8 @@ const MEMBERS = [
       {t:"2026-10-07T20:30:00+13:00", ev:"基督城 → 奥克兰", sub:"捷星 JQ242"},
       {t:"2026-10-11T11:15:00+13:00", ev:"奥克兰 → 香港 → 北京", sub:"国泰 CX7402"},
     ]},
-  { name:"任金航", emoji:"🧑", color:"#6ab0ff",
+  { name:"任金航 · 张思懿 · 李士航", color:"#6ab0ff", avatars:[{e:"👩"},{e:"👩"},{e:"👨"}],
+    note:"任金航、张思懿 10.8 返杭州 · 李士航 10.11 返杭州",
     events:[
       {t:"2026-09-23T23:00:00+08:00", ev:"杭州 → 新加坡", sub:"酷航 TR189 · 杭州"},
       {t:"2026-09-25T02:30:00+08:00", ev:"新加坡 → 墨尔本", sub:"酷航 TR58 · 樟宜 T1"},
@@ -298,40 +311,21 @@ const MEMBERS = [
       {t:"2026-09-28T11:05:00+10:00", ev:"墨尔本 → 基督城", sub:"捷星 JQ171"},
       {t:"2026-09-28T17:25:00+13:00", ev:"抵达基督城", sub:"取车 · 自驾开始"},
       {t:"2026-10-07T20:30:00+13:00", ev:"基督城 → 奥克兰", sub:"捷星 JQ242"},
-      {t:"2026-10-08T11:15:00+13:00", ev:"奥克兰 → 香港 → 杭州", sub:"国泰 CX7402 / CX964"},
-    ]},
-  { name:"张思懿", emoji:"👩", color:"#8ee6a8",
-    events:[
-      {t:"2026-09-23T23:00:00+08:00", ev:"杭州 → 新加坡", sub:"酷航 TR189 · 杭州"},
-      {t:"2026-09-25T02:30:00+08:00", ev:"新加坡 → 墨尔本", sub:"酷航 TR58 · 樟宜 T1"},
-      {t:"2026-09-25T11:45:00+10:00", ev:"抵达墨尔本", sub:"墨尔本 T2"},
-      {t:"2026-09-28T11:05:00+10:00", ev:"墨尔本 → 基督城", sub:"捷星 JQ171"},
-      {t:"2026-09-28T17:25:00+13:00", ev:"抵达基督城", sub:"取车 · 自驾开始"},
-      {t:"2026-10-07T20:30:00+13:00", ev:"基督城 → 奥克兰", sub:"捷星 JQ242"},
-      {t:"2026-10-08T11:15:00+13:00", ev:"奥克兰 → 香港 → 杭州", sub:"国泰 CX7402 / CX964"},
-    ]},
-  { name:"李士航", emoji:"🧑", color:"#d9b8ff",
-    events:[
-      {t:"2026-09-23T23:00:00+08:00", ev:"杭州 → 新加坡", sub:"酷航 TR189 · 杭州"},
-      {t:"2026-09-25T02:30:00+08:00", ev:"新加坡 → 墨尔本", sub:"酷航 TR58 · 樟宜 T1"},
-      {t:"2026-09-25T11:45:00+10:00", ev:"抵达墨尔本", sub:"墨尔本 T2"},
-      {t:"2026-09-28T11:05:00+10:00", ev:"墨尔本 → 基督城", sub:"捷星 JQ171"},
-      {t:"2026-09-28T17:25:00+13:00", ev:"抵达基督城", sub:"取车 · 自驾开始"},
-      {t:"2026-10-07T20:30:00+13:00", ev:"基督城 → 奥克兰", sub:"捷星 JQ242"},
-      {t:"2026-10-11T11:15:00+13:00", ev:"奥克兰 → 香港 → 杭州", sub:"国泰 CX7402 / CX964"},
     ]},
 ].map(m => { m.events.forEach(e => e.t = new Date(e.t)); return m; });
 
 function nextOf(m){ const now=new Date(); for(const e of m.events){ if(e.t>now) return e; } return null; }
 function pad(n){ return String(n).padStart(2,"0"); }
 function renderMembers(){
-  document.getElementById("memberList").innerHTML = MEMBERS.map(m => {
+  document.getElementById("memberList").innerHTML = GROUPS.map(m => {
     const e = nextOf(m);
     const label = e ? `${e.ev}<br><span style="opacity:.7">${e.sub}</span>` : "行程已结束";
     const time = e ? new Intl.DateTimeFormat("zh-CN",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}).format(e.t) : "—";
+    const avs = m.avatars.map((a,i)=>`<div class="m-avatar" style="background:${m.color};z-index:${10-i}">${a.e}</div>`).join("");
+    const note = m.note ? `<div class="m-note">${m.note}</div>` : "";
     return `<div class="member" data-t="${e?e.t.getTime():0}">
-      <div class="m-avatar" style="background:${m.color}">${m.emoji}</div>
-      <div class="m-info"><div class="m-name">${m.name}</div><div class="m-event">${label}</div><div class="m-time">${time}（当地）</div></div>
+      <div class="m-avatars">${avs}</div>
+      <div class="m-info"><div class="m-name">${m.name}</div><div class="m-event">${label}</div><div class="m-time">${time}（当地）</div>${note}</div>
       <div class="m-count"><div class="n" data-cd>—</div><div class="l">倒计时</div></div>
     </div>`;
   }).join("");
@@ -435,7 +429,7 @@ const H = {
   wyndham:{name:"温德姆花园酒店",addr:"64 Kilmore Street, Christchurch 8013",phone:"0064-32440101",in:"9.28 14:00",out:"9.29 10:00"},
   benohau:{name:"High Country Cabin",addr:"412 Manuka Terrace, Ben Ohau",phone:"+61 404 001 102",in:"9.29 15:00",out:"9.30 11:00"},
   twizel:{name:"GH Cottage",addr:"46 Boundary Terrace, Twizel 7999",phone:"—",in:"9.30 15:00",out:"10.2 10:00"},
-  wanaka:{name:"Private flat",addr:"11 Mountain View Drive, Wānaka 9382",phone:"+64 27 241 4884",in:"10.2 15:00",out:"10.3 10:00"},
+  wanaka:{name:"Haka House Wanaka",addr:"94 Brownston Street, Wanaka 9305",phone:"Airbnb 联系 · 接待方 Haka House Wanaka",in:"10.2 14:00",out:"10.3 10:00"},
   queenstown:{name:"Central Location Holiday Home",addr:"18D Bowen Street D, Queenstown 9300",phone:"+64 21 126 3900",in:"10.3 15:00",out:"10.6 10:00"},
   oamaru:{name:"奥马鲁房源",addr:"322 Thames Highway, Oamaru",phone:"房东 Beadon Fauvaka",in:"10.6 14:00",out:"10.7 10:00"},
   radisson:{name:"Radisson RED 奥克兰",addr:"33 Lorne Street, Auckland 1010",phone:"0064-93946600",in:"10.7 15:00",out:"10.8 12:00"},
@@ -666,10 +660,8 @@ function toggleAllDays(){
 }
 
 const TODOS=[
-  {hot:true,text:"办理澳大利亚电子签 + 新西兰电子签（护照有效期 6 个月以上）"},
   {hot:true,text:"办理 NZTA 认证的驾照翻译件（不能用自行翻译件）"},
   {hot:true,text:"预订奥克兰 10.8–10.11 住宿（尹建成、李士航，3 晚）"},
-  {hot:true,text:"普芬比利蒸汽小火车官网购票（9.26）"},
   {text:"确认皇后镇天空缆车+滑板车预约时间（已订）"},
   {text:"确认基督城机场租车订单（Toyota Hilux）"},
   {text:"预订奥马鲁蓝企鹅归巢场次（10.6，确认当日归巢时间）"},
